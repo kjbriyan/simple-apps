@@ -1,0 +1,29 @@
+version: '3.8'
+
+services:
+  web:
+    container_name: simple-apps
+    build: .
+    restart: always
+    environment:
+      DB_NAME: training
+      DB_USER: peserta
+      DB_PASS: password
+    env_file:
+      - .env
+    ports:
+      - "3000"
+
+  db:
+    container_name: mariadb
+    image: mariadb:latest
+    restart: always
+    environment:
+      MYSQL_DATABASE: training
+      MYSQL_USER: peserta
+      MYSQL_PASSWORD: password
+      MARIADB_ROOT_PASSWORD: root
+    volumes:
+      - ./database:/docker-entrypoint-initdb.d   # Mount the database directory into the container
+    ports:
+      - "3306:3306"
