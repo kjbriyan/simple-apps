@@ -44,8 +44,11 @@ describe('Integration Test Connect Database', () => {
     connection.end();
   });
 
-  it('should respond with users data /users', async () => {
-    const response = await request(app).get('/users');
-    expect(response.status).toBe(200);
+  describe('Unit Test /users', () => {
+    it('[{"id":2,"name":"brian","email":"brian@gmail.com","no_telp":5551233},{"id":1,"name":"dominic","email":"dominic@gmail.com","no_telp":5551234}]', async () => {
+      const response = await request(app).get('/users');
+      expect(response.status).toBe(200);
+    });
   });
+
 });
