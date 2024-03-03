@@ -44,7 +44,7 @@ describe('Integration Test Connect Database', () => {
     connection.end();
   });
 
-  it('should respond with users data', async () => {
+  it('should respond with users data /users', async () => {
     const response = await request(app).get('/users');
     expect(response.status).toBe(200);
   });
