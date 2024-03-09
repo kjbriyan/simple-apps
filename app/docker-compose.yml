@@ -5,4 +5,4 @@ services:
   container_name: "ct-sibrillian-simple-apps"
   ports:
    -"8083:3000"
-
+  restart : always
