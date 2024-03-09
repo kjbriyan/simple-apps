@@ -1,8 +1,8 @@
 version: '3.8'
 
 services:
- web-nginx:
+ web:
+  container_name: "sibrillian/simple-apps"
   ports:
-   -"8085:80"
-  image: "sibrillian/simple-apps"
+   -"8083:3000"
 
