@@ -4,5 +4,5 @@ services:
  web-nginx:
   ports:
    -"1010:80"
-  image: "nginx"
+  image: "sibrillian/simple-apps"
 
