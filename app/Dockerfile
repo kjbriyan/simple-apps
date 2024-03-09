@@ -2,16 +2,11 @@ FROM node:18.16.0
 
 WORKDIR /app
 
-COPY package*.json ./
-RUN echo 'Acquire::http::Timeout "60";' > /etc/apt/apt.conf.d/99timeout
-RUN apt-get update && \
-    apt-get install -y iputils-ping && \
-    rm -rf /var/lib/apt/lists/*
+ADD /app/. /app/
 
 RUN npm install
 
-COPY . .
+RUN npm start
 
 EXPOSE 3000
 
-CMD ["npm", "start","bash"]
