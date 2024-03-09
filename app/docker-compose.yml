@@ -2,7 +2,7 @@ version: '3.8'
 
 services:
  web:
-  container_name: "sibrillian/simple-apps"
+  container_name: "ct-sibrillian-simple-apps"
   ports:
    -"8083:3000"
 
