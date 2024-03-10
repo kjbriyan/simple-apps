@@ -5,6 +5,9 @@ pipeline {
         }
     }
     tools {nodejs "nodejs 18.16.0"}
+    triggers {
+        pollSCM('* * * * *') // Poll SCM every minute
+    }
     stages {
         stage('CHECKOUT') {
             steps {
