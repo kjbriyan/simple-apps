@@ -1,0 +1,15 @@
+pipeline {
+    agent {
+        node{
+            label "docker-kj"
+        }
+    }
+
+    stages {
+        stage('CHECKOUT') {
+            steps {
+                git branch: 'main', url:"https://github.com/kjbriyan/simple-apps.git"
+            }
+        }
+    }
+}
