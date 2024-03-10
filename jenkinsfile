@@ -40,6 +40,12 @@ pipeline {
                docker compose up -d'''
             }
         }
+        stage('DOCKER PUSH') {
+            steps {
+               sh '''
+               docker push sibrillian/simple-apps-kj:latest'''
+            }
+        }
     }
 }
 
