@@ -33,16 +33,11 @@ pipeline {
                 -Dsonar.login=sqp_0393f2d594128fab77c27c53c9c5e8c97216beb6'''     
             }
         }
-        stage('Build and Run Docker Compose') {
+        stage('BUILD DOCKER COMPOSE') {
             steps {
-                // Ensure Docker is installed and available
-                script {
-                    def dockerVersion = sh(script: "docker --version", returnStdout: true).trim()
-                    echo "Docker version: ${dockerVersion}"
-                }
-                
-                // Build and run Docker Compose
-                sh 'docker-compose up -d'
+               sh '''
+               docker compose build
+               docker compose up -d'''
             }
         }
     }
