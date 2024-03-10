@@ -21,7 +21,7 @@ app.get('/app2', (req, res) => {
 });
 
 app.get('/about', (req, res) => {
-  res.send('this web is for testing devops')
+  res.send('this web is for testing devops pipeline')
 });
 
 app.get('/users', (req, res, next) => {
